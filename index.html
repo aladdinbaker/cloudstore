@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كلود | CLOUD - معرض الإلكترونيات وإكسسوارات الهواتف</title>
+    <!-- خط Tajawal وجليفات FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- تنسيقات CSS المدمجة -->
+    <style>
+        /* الألوان المتغيرة وإعدادات الخطوط */
+        :root {
+            --bg-main: #f8fafc;
+            --primary-blue: #0284c7;
+            --primary-hover: #0369a1;
+            --blue-light: #e0f2fe;
+            --blue-dark: #0f172a;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --white: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .ltr {
+            direction: ltr;
+        }
+
+        /* الهيدر وشريط التنقل */
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 75px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--primary-blue), #38bdf8);
+            color: var(--white);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.4rem;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--blue-dark);
+        }
+
+        .brand-sub {
+            font-size: 0.65rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-top: -4px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-blue);
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--blue-dark);
+            cursor: pointer;
+        }
+
+        /* القسم الرئيسي Hero */
+        .hero {
+            background: linear-gradient(180deg, var(--blue-light) 0%, var(--bg-main) 100%);
+            padding: 5rem 0 4rem;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 800px;
+        }
+
+        .badge {
+            background-color: #dbeafe;
+            color: var(--primary-hover);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--blue-dark);
+            margin: 1.2rem 0;
+        }
+
+        .hero-title .highlight {
+            color: var(--primary-blue);
+        }
+
+        .hero-desc {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        /* الأزرار العامة */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.8rem 1.8rem;
+            border-radius: var(--radius);
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-outline {
+            background-color: var(--white);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            background-color: #f1f5f9;
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: var(--white);
+            width: 100%;
+            justify-content: center;
+            padding: 0.9rem;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1eb956;
+        }
+
+        /* قسم العناوين والفلترة */
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--blue-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+        }
+
+        .catalog {
+            padding: 4rem 0;
+        }
+
+        .filter-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 2rem;
+        }
+
+        .filter-controls {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.8rem 2.8rem 0.8rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: inherit;
+            outline: none;
+            background-color: var(--bg-main);
+        }
+
+        .select-box select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: inherit;
+            outline: none;
+            background-color: var(--bg-main);
+        }
+
+        .category-tabs {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+
+        .tab-btn {
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+            border: none;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+        }
+
+        .tab-btn.active {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* شبكة عرض المنتجات */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .product-img {
+            height: 180px;
+            background-color: #f1f5f9;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-brand {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.9);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--blue-dark);
+        }
+
+        .product-info {
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--blue-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-specs {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--bg-main);
+            padding-top: 0.8rem;
+        }
+
+        .product-price {
+            font-weight: 800;
+            color: var(--primary-blue);
+        }
+
+        .btn-details {
+            font-size: 0.8rem;
+            color: var(--primary-hover);
+            font-weight: 700;
+        }
+
+        /* قسم عن كلود */
+        .about {
+            background-color: var(--white);
+            padding: 5rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .sub-title {
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .about-info h2 {
+            font-size: 2rem;
+            color: var(--blue-dark);
+            margin: 0.5rem 0 1rem;
+        }
+
+        .features-list {
+            margin-top: 2rem;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--bg-main);
+            padding: 1rem;
+            border-radius: var(--radius);
+        }
+
+        .feature-item i {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        .cloud-box {
+            background: linear-gradient(135deg, var(--blue-light), #f0f9ff);
+            border: 1px solid #bae6fd;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .big-logo {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        /* قسم التواصل */
+        .contact {
+            padding: 5rem 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius);
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--blue-light);
+            color: var(--primary-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin: 0 auto 1rem;
+        }
+
+        /* النافذة المنبثقة Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 1rem;
+        }
+
+        .modal-content {
+            background: var(--white);
+            width: 100%;
+            max-width: 700px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--bg-main);
+            border: none;
+            font-size: 1.5rem;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .modal-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+
+        .modal-image {
+            height: 250px;
+            background-color: #f1f5f9;
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-brand {
+            font-size: 0.8rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        .modal-title {
+            font-size: 1.3rem;
+            color: var(--blue-dark);
+            margin: 0.3rem 0;
+        }
+
+        .modal-price {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 0.8rem;
+        }
+
+        .modal-status {
+            color: #16a34a;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .modal-desc-box {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-desc-box h4 {
+            font-size: 0.9rem;
+            color: var(--blue-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .modal-desc-box p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* الفوتر */
+        .footer {
+            background-color: var(--blue-dark);
+            color: var(--text-muted);
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 0.9rem;
+        }
+
+        .footer strong {
+            color: var(--white);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            background: var(--white);
+            border-radius: var(--radius);
+            color: var(--text-muted);
+        }
+
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* التجاوب مع الشاشات الصغرى */
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-menu {
+                position: fixed;
+                right: -100%;
+                top: 75px;
+                background: var(--white);
+                flex-direction: column;
+                width: 100%;
+                padding: 2rem;
+                box-shadow: var(--shadow-md);
+                transition: var(--transition);
+            }
+            .nav-menu.active { right: 0; }
+            .filter-controls { grid-template-columns: 1fr; }
+            .about-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .modal-body { grid-template-columns: 1fr; }
+            .modal-image { height: 180px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- الهيدر وشريط التنقل -->
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="logo-icon">C</div>
+                <div class="logo-text">
+                    <span class="brand-name">كلود</span>
+                    <span class="brand-sub">CLOUD STORE</span>
+                </div>
+            </div>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#hero" class="nav-link active">الرئيسية</a>
+                <a href="#catalog" class="nav-link">معرض المنتجات</a>
+                <a href="#about" class="nav-link">عن كلود</a>
+                <a href="#contact" class="nav-link">التواصل والموقع</a>
+            </nav>
+
+            <button class="hamburger" id="hamburgerBtn" aria-label="القائمة">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- القسم الرئيسي (Hero Section) -->
+    <section class="hero" id="hero">
+        <div class="container hero-container">
+            <span class="badge">عالمك الذكي لإكسسوارات الهواتف</span>
+            <h1 class="hero-title">مرحباً بكم في متجر <span class="highlight">كلود</span></h1>
+            <p class="hero-desc">
+                وجهتك الأولى لاكتشاف أحدث مستلزمات الهواتف الذكية، السماعات، الشواحن، والأجهزة الإلكترونية الأصلية
+                بأسعار متميزة.
+            </p>
+            <div class="hero-buttons">
+                <a href="#catalog" class="btn btn-primary">تصفح المنتجات</a>
+                <a href="#contact" class="btn btn-outline">موقعنا وتواصلنا</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم معرض المنتجات (Catalog) -->
+    <section class="catalog" id="catalog">
+        <div class="container">
+            <div class="section-title">
+                <h2>معرض المنتجات والمشغولات</h2>
+                <p>استعرض تشكيلة إكسسوارات الهواتف مع إمكانية الفلترة والبحث السريع</p>
+            </div>
+
+            <!-- أدوّات الفلترة والبحث -->
+            <div class="filter-card">
+                <div class="filter-controls">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="searchInput" placeholder="ابحث باسم المنتج أو الموديل...">
+                    </div>
+                    <div class="select-box">
+                        <select id="brandSelect">
+                            <option value="ALL">جميع الماركات / التوافق</option>
+                            <option value="Apple">Apple (آبل)</option>
+                            <option value="Samsung">Samsung (سامسونج)</option>
+                            <option value="Anker">Anker (أنكر)</option>
+                            <option value="Xiaomi">Xiaomi (شاومي)</option>
+                            <option value="Universal">عام / مختلف</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- أزرار التصنيفات -->
+                <div class="category-tabs" id="categoryTabs">
+                    <!-- يتم توليد الأزرار عبر JavaScript -->
+                </div>
+            </div>
+
+            <!-- شبكة عرض المنتجات -->
+            <div class="products-grid" id="productsGrid">
+                <!-- يتم توليد الكروت عبر JavaScript -->
+            </div>
+
+            <!-- حالة عدم وجود نتائج -->
+            <div class="empty-state hidden" id="emptyState">
+                <i class="fa-solid fa-box-open"></i>
+                <p>لم يتم العثور على منتجات تطابق خيارات البحث.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم عن المتجر (About) -->
+    <section class="about" id="about">
+        <div class="container about-grid">
+            <div class="about-info">
+                <span class="sub-title">عن متجرنا</span>
+                <h2>متجر كلود للإلكترونيات</h2>
+                <p>
+                    في <strong>كلود (CLOUD)</strong>، نجمع لك أحدث ما توصلت إليه تقنيات الهواتف الذكية والإكسسوارات
+                    الأصلية. نسعى لتوفير منتجات عالية الجودة تضمن لك الأداء العالي والأناقة العصرية، مع تقديم خدمة
+                    استشارية لمساعدتك في اختيار الإكسسوار الأنسب لجهازك.
+                </p>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <div>
+                            <h4>منتجات مضمونة</h4>
+                            <p>جودة عالية واختبار دقيق للمنتجات</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-headset"></i>
+                        <div>
+                            <h4>دعم واستشارات</h4>
+                            <p>نساعدك في اختيار التوافق الأنسب لجهازك</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-card">
+                <div class="cloud-box">
+                    <div class="big-logo">CLOUD</div>
+                    <h3>متجر كلود</h3>
+                    <p>جودة - تميز - مواكبة لكل جديد</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التواصل والموقع (Contact) -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>تواصل معنا وموقع المتجر</h2>
+                <p>يسعدنا زيارتكم في محلنا أو التواصل المباشر للاستفسارات</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                    <h3>الهاتف والواتساب</h3>
+                    <p class="ltr">+967 770 000 000</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <h3>عنوان المحل</h3>
+                    <p>الشارع الرئيسي - مقابل المركز التجاري</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
+                    <h3>أوقات العمل</h3>
+                    <p>يومياً: 8:00 صباحاً - 12:00 مساءً</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <p> (صمم وتم برمجتة بواسطة علاءالدين باكر) | جميع الحقوق محفوظة&copy; 2026 لـ <strong>متجر كلود
+                    (CLOUD)</strong></p>
+        </div>
+    </footer>
+
+    <!-- النافذة المنبثقة للتفاصيل (Product Modal) -->
+    <div class="modal-overlay hidden" id="productModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalCloseBtn">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImg" src="" alt="صورة المنتج">
+                </div>
+                <div class="modal-details">
+                    <span class="modal-brand" id="modalBrand"></span>
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <p class="modal-price" id="modalPrice"></p>
+                    <div class="modal-status">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>متوفر في المحل</span>
+                    </div>
+                    <div class="modal-desc-box">
+                        <h4>المواصفات والتفاصيل:</h4>
+                        <p id="modalDesc"></p>
+                    </div>
+                    <a href="#" target="_blank" class="btn btn-whatsapp" id="modalWhatsappBtn">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        طلب / استفسار عبر الواتساب
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- كود JavaScript المدمج -->
+    <script>
+        // 1. مصفوفات البيانات
+        const categories = [
+            { id: "ALL", name: "الكل" },
+            { id: "PHONES", name: "هواتف" },
+            { id: "CHARGERS", name: "شواحن وكوابل" },
+            { id: "HEADPHONES", name: "سماعات" },
+            { id: "CASES", name: "حمايات وكفرات" },
+            { id: "SMART_ACC", name: "إكسسوارات ذكية" },
+        ];
+
+        const productsData = [
+            {
+                id: 1,
+                name: "شاحن أنكر Nano II قدرة 20 واط PD",
+                category: "CHARGERS",
+                brand: "Anker",
+                price: "15 $",
+                specs: "يدعم الشحن السريع الفائق لأجهزة iPhone و Android، حماية من الحرارة الزائدة.",
+                image: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=500&q=80",
+            },
+            {
+                id: 2,
+                name: "سماعة آبل AirPods Pro 2 الأصلي",
+                category: "HEADPHONES",
+                brand: "Apple",
+                price: "240 $",
+                specs: "عزل ضوضاء نَشِط متميز، منفذ شحن Type-C، بطارية تدوم حتى 30 ساعة مع علبة الشحن.",
+                image: "https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=500&q=80",
+            },
+            {
+                id: 3,
+                name: "كفر حماية شفاف MagSafe لـ iPhone 15/14",
+                category: "CASES",
+                brand: "Apple",
+                price: "12 $",
+                specs: "تصميم مقاوم للصدمات والاصفرار، يدعم الشحن المغناطيسي السريع بأعلى كفاءة.",
+                image: "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=500&q=80",
+            },
+            {
+                id: 4,
+                name: "ساعة شاومي الذكية Band 8",
+                category: "SMART_ACC",
+                brand: "Xiaomi",
+                price: "45 $",
+                specs: "شاشة AMOLED عالية الدقة، شحن سريع وبطارية تدوم حتى 16 يوماً، تتبع المؤشرات الصحية.",
+                image: "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=500&q=80",
+            },
+            {
+                id: 5,
+                name: "كيبل شحن قماش مضاد للقطع Type-C",
+                category: "CHARGERS",
+                brand: "Universal",
+                price: "8 $",
+                specs: "قدرة نقل طاقة حتى 60 واط، بطول 1.2 متر، خامات قماشية متينة للتحمل اليومي.",
+                image: "https://images.unsplash.com/photo-1585338107529-13afc5f02586?w=500&q=80",
+            },
+            {
+                id: 6,
+                name: "سماعة بلوتوث محيطية لاسلكية",
+                category: "HEADPHONES",
+                brand: "Universal",
+                price: "35 $",
+                specs: "صوت محيطي نقي، وسائد مريحة جداً للأذن، إمكانية استخدام المايك المدمج للمكالمات.",
+                image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80",
+            },
+        ];
+
+        // رقم الواتساب المخصص للاستقبال
+        const WHATSAPP_NUMBER = "967770000000";
+
+        // 2. المتغيرات المحلية
+        let currentCategory = "ALL";
+        let currentSearch = "";
+        let currentBrand = "ALL";
+
+        // 3. عناصر DOM
+        const categoryTabs = document.getElementById("categoryTabs");
+        const productsGrid = document.getElementById("productsGrid");
+        const searchInput = document.getElementById("searchInput");
+        const brandSelect = document.getElementById("brandSelect");
+        const emptyState = document.getElementById("emptyState");
+
+        // عناصر Modal
+        const productModal = document.getElementById("productModal");
+        const modalCloseBtn = document.getElementById("modalCloseBtn");
+        const modalImg = document.getElementById("modalImg");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalBrand = document.getElementById("modalBrand");
+        const modalPrice = document.getElementById("modalPrice");
+        const modalDesc = document.getElementById("modalDesc");
+        const modalWhatsappBtn = document.getElementById("modalWhatsappBtn");
+
+        // 4. بناء أزرار التصنيفات
+        function renderCategoryTabs() {
+            categoryTabs.innerHTML = categories
+                .map(
+                    (cat) => `
+                <button 
+                    class="tab-btn ${currentCategory === cat.id ? "active" : ""}"
+                    onclick="setCategory('${cat.id}')">
+                    ${cat.name}
+                </button>
+            `,
+                )
+                .join("");
+        }
+
+        // 5. عرض شبكة المنتجات
+        function renderProducts() {
+            const filtered = productsData.filter((item) => {
+                const matchCat =
+                    currentCategory === "ALL" || item.category === currentCategory;
+                const matchBrand = currentBrand === "ALL" || item.brand === currentBrand;
+                const matchSearch =
+                    item.name.toLowerCase().includes(currentSearch.toLowerCase()) ||
+                    item.specs.toLowerCase().includes(currentSearch.toLowerCase());
+                return matchCat && matchBrand && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                productsGrid.innerHTML = "";
+                emptyState.classList.remove("hidden");
+            } else {
+                emptyState.classList.add("hidden");
+                productsGrid.innerHTML = filtered
+                    .map(
+                        (item) => `
+                    <div class="product-card" onclick="openModal(${item.id})">
+                        <div class="product-img">
+                            <img src="${item.image}" alt="${item.name}">
+                            <span class="product-brand">${item.brand}</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">${item.name}</h3>
+                            <p class="product-specs">${item.specs}</p>
+                            <div class="product-footer">
+                                <span class="product-price">${item.price}</span>
+                                <span class="btn-details">عرض التفاصيل &larr;</span>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                    )
+                    .join("");
+            }
+        }
+
+        // 6. التحكم بفتح وإغلاق Modal
+        function openModal(productId) {
+            const product = productsData.find((p) => p.id === productId);
+            if (!product) return;
+
+            modalImg.src = product.image;
+            modalTitle.textContent = product.name;
+            modalBrand.textContent = product.brand;
+            modalPrice.textContent = product.price;
+            modalDesc.textContent = product.specs;
+
+            // تجهيز رابط الواتساب بالنص التلقائي
+            const message = encodeURIComponent(
+                `مرحباً متجر كلود، أرغب في الاستفسار عن المنتج: ${product.name}`,
+            );
+            modalWhatsappBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+
+            productModal.classList.remove("hidden");
+        }
+
+        function closeModal() {
+            productModal.classList.add("hidden");
+        }
+
+        // 7. الأحداث والفلترة
+        function setCategory(catId) {
+            currentCategory = catId;
+            renderCategoryTabs();
+            renderProducts();
+        }
+
+        searchInput.addEventListener("input", (e) => {
+            currentSearch = e.target.value;
+            renderProducts();
+        });
+
+        brandSelect.addEventListener("change", (e) => {
+            currentBrand = e.target.value;
+            renderProducts();
+        });
+
+        modalCloseBtn.addEventListener("click", closeModal);
+        productModal.addEventListener("click", (e) => {
+            if (e.target === productModal) closeModal();
+        });
+
+        // قائمة الهواتف
+        const hamburgerBtn = document.getElementById("hamburgerBtn");
+        const navMenu = document.getElementById("navMenu");
+
+        hamburgerBtn.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+
+        // التشغيل الأولي
+        document.addEventListener("DOMContentLoaded", () => {
+            renderCategoryTabs();
+            renderProducts();
+        });
+    </script>
+</body>
+
+</html>
